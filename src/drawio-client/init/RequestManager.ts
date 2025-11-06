@@ -48,6 +48,10 @@ export class RequestManager {
     if (this.blobCache.has(url)) {
       return this.blobCache.get(url);
     }
+    //WTF?
+    if (url == "null") {
+      return url;
+    }
 
     const file = this.responses.find((file) => file.href === url);
     if (typeof file === "undefined") {
