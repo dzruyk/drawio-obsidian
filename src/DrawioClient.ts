@@ -165,7 +165,16 @@ const onWindowMessage = (messageEvent) => {
 }
 window.addEventListener("message",onWindowMessage);
 window.parent.postMessage("{\\"event\\":\\"iframe\\"}",'*');
-</script>`);
+</script>
+<body class="geEditor geClassic">
+<div id="geInfo">
+	<div class="geBlock">
+	</div>
+</div>
+
+</body>
+
+`);
 
     const frame = document.createElement("iframe");
     frame.setAttribute("frameborder", "0");
