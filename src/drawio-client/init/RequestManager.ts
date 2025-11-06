@@ -163,6 +163,13 @@ export class RequestManager {
               return Reflect.set(target, propertyKey, value, receiver);
             }
           },
+          get(target: any, propertyKey: any) {
+            let value = target[propertyKey];
+            if (typeof value === "function") {
+              return value.bind(target);
+            }
+            return value;
+          },
         });
       },
     });

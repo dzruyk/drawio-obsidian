@@ -150,6 +150,10 @@ export default class DrawioClient implements EventTarget {
       "data:text/html," +
       encodeURIComponent(`
 <script>
+//borrowed from drawio/src/main/webapp/index.html
+var mxIsElectron = navigator.userAgent != null && navigator.userAgent.toLowerCase().indexOf(' electron/') > -1 && 
+							navigator.userAgent.indexOf(' draw.io/') > -1;
+
 const onWindowMessage = (messageEvent) => {
   const message = JSON.parse(messageEvent.data);
   if(message.action==="script"){
