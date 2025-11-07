@@ -294,6 +294,7 @@ export class ConfigurationManager {
   private urlParams: any;
 
   constructor(win: Window) {
+
     this.urlParams = {};
     this.drawioConfig = {};
     this.defineUrlParams(win);
@@ -324,6 +325,7 @@ export class ConfigurationManager {
       get(target, propertyKey, receiver) {
         const value = Reflect.get(target, propertyKey, receiver);
         // NOTE: This is a really helpful place to debug values that drawio is reading
+        //console.log("drawioConfig ", propertyKey, value);
         return value;
       },
       set() {

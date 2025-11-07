@@ -50,6 +50,7 @@ export class RequestManager {
     }
     //WTF?
     if (url == "null") {
+      console.warn("get null resource, looks like error");
       return url;
     }
 
@@ -199,6 +200,7 @@ export class RequestManager {
     this.interceptImages();
     this.interceptCss();
     this.interceptXhrRequests();
+
   }
 }
 
